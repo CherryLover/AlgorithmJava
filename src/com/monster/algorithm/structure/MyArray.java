@@ -21,12 +21,22 @@ public class MyArray {
             throw new IndexOutOfBoundsException("超出数组实际长度");
         }
         // 复制待插入位置及其后的数据
+        if (size == array.length) {
+            resize();
+        }
         for (int i = size - 1; i >= index; i--) {
             array[i + 1] = array[i];
         }
         // 插入新的数据
         array[index] = element;
         size++;
+    }
+
+    private void resize() {
+        int oldLength = array.length;
+        int[] tempArray = new int[(int) (oldLength * 1.5)];
+        System.arraycopy(array, 0, tempArray, 0, oldLength);
+        array = tempArray;
     }
 
     public void out() {
