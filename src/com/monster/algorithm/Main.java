@@ -5,6 +5,10 @@ import com.monster.algorithm.structure.MyArray;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Algorithm World");
+        test_my_array();
+    }
+
+    private static void test_my_array() {
         MyArray myArray = new MyArray(5);
         myArray.insert(0, 5);
         myArray.insert(1, 8);
@@ -13,6 +17,7 @@ public class Main {
         myArray.insert(4,4);
         myArray.insert(5,7);
         myArray.insert(6,2);
+        myArray.remove(4);
 //        myArray.insert(2, 10);
 //        myArray.insert(0, 3);
 //        myArray.insert(2, 2);
