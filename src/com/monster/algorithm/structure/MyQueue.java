@@ -10,7 +10,7 @@ public class MyQueue {
     }
 
     public void enqueue(int data) {
-        if (rearIndex() == rear) {
+        if (rearIndex() == front) {
             throw new RuntimeException("队列已满");
         }
         queueArray[rear] = data;
