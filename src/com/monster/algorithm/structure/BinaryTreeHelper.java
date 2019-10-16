@@ -1,6 +1,7 @@
 package com.monster.algorithm.structure;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTreeHelper {
 
@@ -72,6 +73,23 @@ public class BinaryTreeHelper {
             sb.append(postOrder(node.left));
             sb.append(postOrder(node.right));
             sb.append(node.data).append(",");
+        }
+        return sb.toString();
+    }
+
+    public String levelOrder(TreeNode node) {
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(node);
+        while (!queue.isEmpty()) {
+            TreeNode poll = queue.poll();
+            sb.append(poll.data).append(",");
+            if (poll.left != null) {
+                queue.offer(poll.left);
+            }
+            if (poll.right != null) {
+                queue.offer(poll.right);
+            }
         }
         return sb.toString();
     }

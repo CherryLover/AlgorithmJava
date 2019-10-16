@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Queue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,6 +42,15 @@ class BinaryTreeHelperTest {
         BinaryTreeHelper.TreeNode binaryTree = instance.createBinaryTree(new LinkedList<>(Arrays.asList(sampleArray)));
         String out = instance.postOrder(binaryTree);
         assertEquals(out, "9,10,2,4,8,3,");
+    }
+
+    @Test
+    public void test_binaryTree_levelOrder() {
+        Integer[] sampleArray = {3, 2, 9, null, null, 10, null, null, 8, null, 4};
+        BinaryTreeHelper instance = BinaryTreeHelper.getInstance();
+        BinaryTreeHelper.TreeNode binaryTree = instance.createBinaryTree(new LinkedList<>(Arrays.asList(sampleArray)));
+        String out = instance.levelOrder(binaryTree);
+        assertEquals(out, "3,2,8,9,10,4,");
     }
 
 }
