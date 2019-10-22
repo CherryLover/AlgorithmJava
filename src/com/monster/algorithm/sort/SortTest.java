@@ -20,4 +20,11 @@ public class SortTest {
         Sort sort = new BubbleSort();
         assertEquals("1,2,3,4,5,6,7,8", sort.sort(array));
     }
+
+    @Test
+    void test_cocktailSort() {
+        int[] array = {3, 4, 2, 1, 5, 6, 7, 8};
+        Sort sort = new CocktailSort();
+        assertEquals("1,2,3,4,5,6,7,8", sort.sort(array));
+    }
 }
