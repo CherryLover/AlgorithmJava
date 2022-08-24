@@ -57,6 +57,17 @@ public class MyArray {
         return removeElement;
     }
 
+    public int get(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("待移出下标超出数组实际长度");
+        }
+        return array[index];
+    }
+
+    public int size() {
+        return size;
+    }
+
     private void resize() {
         int oldLength = array.length;
         int[] tempArray = new int[(int) (oldLength * 1.5)];
